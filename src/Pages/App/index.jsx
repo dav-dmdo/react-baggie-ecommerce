@@ -1,23 +1,30 @@
-import { Home } from '../Home'
-import { MyAccount } from '../MyAccount'
-import { MyOrder } from '../MyOrder'
-import { MyOrders } from '../MyOrders'
-import { NotFound } from '../NotFound'
-import { SignIn } from '../SignIn'
-import './App.css'
+import { Home } from "../Home";
+import { useRoutes, BrowserRouter } from "react-router-dom";
+import { MyAccount } from "../MyAccount";
+import { MyOrder } from "../MyOrder";
+import { MyOrders } from "../MyOrders";
+import { NotFound } from "../NotFound";
+import { SignIn } from "../SignIn";
+import "./App.css";
 
-function App() {
+const AppRoutes = () => {
+  const routes = useRoutes([
+    { path: "/", element: <Home /> },
+    { path: "/my-account", element: <MyAccount /> },
+    { path: "/my-order", element: <MyOrder /> },
+    { path: "/my-orders", element: <MyOrders /> },
+    { path: "/sign-in", element: <SignIn /> },
+    { path: "/*", element: <NotFound /> },
+  ]);
+
+  return routes;
+};
+const App =  () => {
   return (
-  
-      <div className='bg-indigo-300'>
-        <Home />
-        <MyAccount />
-        <MyOrder />
-        <MyOrders />
-        <NotFound />
-        <SignIn />
-      </div>
-  )
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
