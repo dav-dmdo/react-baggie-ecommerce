@@ -15,7 +15,7 @@
 
 ## Explora Mi Tienda Online
 
-- 🚀 **[¡Descubre Baggie ahora!](https://tu-usuario.github.io/react-baggie-ecommerce/)**
+- 🚀 **[¡Descubre Baggie ahora!](https://dav-dmdo.github.io/react-baggie-ecommerce/)**
 
 ## Requisitos para la Aventura
 
