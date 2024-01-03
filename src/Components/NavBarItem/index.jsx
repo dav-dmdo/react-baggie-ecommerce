@@ -4,14 +4,7 @@ import { NavLink } from "react-router-dom";
 
 
 const NavBarItem = ({ liClassName, path, text, stylesNavLink }) => {
-  
-  NavBarItem.propTypes = {
-    liClassName: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    stylesNavLink: PropTypes.json
-  }
-
+   
   const {
     pendingStyle = '' , 
     activeStyle = 'underline underline-offset-4', 
@@ -32,6 +25,13 @@ const NavBarItem = ({ liClassName, path, text, stylesNavLink }) => {
         </NavLink>
       </li>    
     );
+}
+
+NavBarItem.propTypes = {
+  liClassName: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  stylesNavLink: PropTypes.object
 }
 
 export { NavBarItem };
