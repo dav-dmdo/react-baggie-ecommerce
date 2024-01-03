@@ -26,7 +26,7 @@ const NavBarItem = ({ liClassName, path, text, stylesNavLink }) => {
   ].join(" ")
 
     return(
-      <li className={` ${liClassName}`}>
+      <li className={`${liClassName}`}>
         <NavLink to={path} className={toggle}>
           {text}
         </NavLink>
