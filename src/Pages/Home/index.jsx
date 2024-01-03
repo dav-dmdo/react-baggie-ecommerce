@@ -1,10 +1,11 @@
+import { Layout } from "../../Components/Layout";
 
-function Home () {
-    return(
-        <div>
-            Home
-        </div>
-    )
-}
+const Home = () => {
+  return (
+    <Layout>
+      Home
+    </Layout>
+    );
+};
 
 export { Home };

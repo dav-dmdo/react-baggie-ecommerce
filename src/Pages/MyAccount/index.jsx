@@ -1,8 +1,10 @@
-function MyAccount () {
+import { Layout } from "../../Components/Layout";
+
+const MyAccount = () => {
     return(
-        <div>
+        <Layout>
             MyAccount
-        </div>
+        </Layout>
     )
 }
 

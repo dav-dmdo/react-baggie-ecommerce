@@ -4,13 +4,6 @@ import { NavLink } from "react-router-dom";
 
 
 const NavBarItem = ({ liClassName, path, text, stylesNavLink }) => {
-  
-  NavBarItem.propTypes = {
-    liClassName: PropTypes.string.isRequired,
-    path: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    stylesNavLink: PropTypes.json
-  }
 
   const {
     pendingStyle = '' , 
@@ -33,5 +26,13 @@ const NavBarItem = ({ liClassName, path, text, stylesNavLink }) => {
       </li>    
     );
 }
+
+NavBarItem.propTypes = {
+  liClassName: PropTypes.string.isRequired,
+  path: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+  stylesNavLink: PropTypes.object
+}
+
 
 export { NavBarItem };
