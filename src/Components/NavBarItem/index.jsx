@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 
 
 const NavBarItem = ({ liClassName, path, text, stylesNavLink }) => {
-   
+
   const {
     pendingStyle = '' , 
     activeStyle = 'underline underline-offset-4', 
@@ -33,5 +33,6 @@ NavBarItem.propTypes = {
   text: PropTypes.string.isRequired,
   stylesNavLink: PropTypes.object
 }
+
 
 export { NavBarItem };
