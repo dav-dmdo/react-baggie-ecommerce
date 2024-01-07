@@ -1,10 +1,16 @@
-import { createContext } from "react";
+import { createContext, useState } from "react";
 import { PropTypes } from "prop-types";
+
 const CartContext = createContext();
 
 const CartProvider = ({children}) => {
+    const [count, setCount] = useState(0);
+
     return(
-        <CartContext.Provider >
+        <CartContext.Provider value={{
+            count, 
+            setCount
+        }}>
             {children}
         </CartContext.Provider>
     )
