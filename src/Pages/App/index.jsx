@@ -1,12 +1,15 @@
-import { Home } from "../Home";
 import { useRoutes, BrowserRouter } from "react-router-dom";
+import { CartContext, CartProvider } from "../../Context";
+import { Home } from "../Home";
 import { MyAccount } from "../MyAccount";
 import { MyOrder } from "../MyOrder";
 import { MyOrders } from "../MyOrders";
 import { NotFound } from "../NotFound";
 import { SignIn } from "../SignIn";
-import { Navbar } from "../../Components/Navbar"
+import { Navbar } from "../../Components/Navbar";
+
 import "./App.css";
+import { useContext } from "react";
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -20,13 +23,16 @@ const AppRoutes = () => {
 
   return routes;
 };
-const App =  () => {
+const App = () => {
+  const context = useContext(CartContext);
   return (
-    <BrowserRouter>
-      <AppRoutes />
-      <Navbar />
-    </BrowserRouter>
+    <CartProvider>
+      <BrowserRouter>
+        <AppRoutes />
+        <Navbar />
+      </BrowserRouter>
+    </CartProvider>
   );
-}
+};
 
 export default App;
