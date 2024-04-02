@@ -9,7 +9,6 @@ import { SignIn } from "../SignIn";
 import { Navbar } from "../../Components/Navbar";
 
 import "./App.css";
-import { useContext } from "react";
 
 const AppRoutes = () => {
   const routes = useRoutes([
@@ -24,7 +23,6 @@ const AppRoutes = () => {
   return routes;
 };
 const App = () => {
-  const context = useContext(CartContext);
   return (
     <CartProvider>
       <BrowserRouter>
