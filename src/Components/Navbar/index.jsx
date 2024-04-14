@@ -3,17 +3,32 @@ import { ShoppingBagIcon } from "@heroicons/react/24/solid";
 import { CartContext } from "../../Context";
 import { NavBarItem } from "../NavBarItem";
 
-const baggieLI = { pendingStyle: '' , activeStyle: '', transitioningStyle: ''}
+const baggieLI = { pendingStyle: "", activeStyle: "", transitioningStyle: "" };
 
 const leftUL = [
-	{ liClassName: "font-semibold text-lg" , path: '/' , text: 'Baggie' , stylesNavLink: baggieLI },
-	{ liClassName: "" , path:'/' , text: 'All' , stylesNavLink: {}},
-	{ liClassName: "" , path:'/clothes' , text: 'Clothes' , stylesNavLink: {}},
-	{ liClassName: "" , path:'/electronics' , text: 'Electronics' , stylesNavLink: {}},
-	{ liClassName: "" , path:'/furnitures' , text: 'Furnitures' , stylesNavLink: {}},
-	{ liClassName: "" , path:'/toys' , text: 'Toys' , stylesNavLink: {}},
-	{ liClassName: "" , path:'/others' , text: 'Others' , stylesNavLink: {}}
-]
+  {
+    liClassName: "font-semibold text-lg",
+    path: "/",
+    text: "Baggie",
+    stylesNavLink: baggieLI,
+  },
+  { liClassName: "", path: "/", text: "All", stylesNavLink: {} },
+  { liClassName: "", path: "/clothes", text: "Clothes", stylesNavLink: {} },
+  {
+    liClassName: "",
+    path: "/electronics",
+    text: "Electronics",
+    stylesNavLink: {},
+  },
+  {
+    liClassName: "",
+    path: "/furnitures",
+    text: "Furnitures",
+    stylesNavLink: {},
+  },
+  { liClassName: "", path: "/toys", text: "Toys", stylesNavLink: {} },
+  { liClassName: "", path: "/others", text: "Others", stylesNavLink: {} },
+];
 
 const rightUL = [
 	{ liClassName: "" , path:'/my-orders' , text: 'My Orders' , stylesNavLink: {}},
