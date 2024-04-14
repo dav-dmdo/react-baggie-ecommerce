@@ -1,3 +1,6 @@
+import { useContext } from "react";
+import { ShoppingBagIcon } from "@heroicons/react/24/solid";
+import { CartContext } from "../../Context";
 import { NavBarItem } from "../NavBarItem";
 
 const baggieLI = { pendingStyle: '' , activeStyle: '', transitioningStyle: ''}
@@ -15,11 +18,11 @@ const leftUL = [
 const rightUL = [
 	{ liClassName: "" , path:'/my-orders' , text: 'My Orders' , stylesNavLink: {}},
 	{ liClassName: "" , path:'/my-account' , text: 'My Account' , stylesNavLink: {}},
-	{ liClassName: "" , path:'/sign-in' , text: 'Sign In' , stylesNavLink: {}},
-	{ liClassName: "" , path:'/cart' , text: 'Cart 0' , stylesNavLink: {}}
+	{ liClassName: "" , path:'/sign-in' , text: 'Sign In' , stylesNavLink: {}}
 ]
 
 const Navbar = () => {
+	const { count, setItemsByCategory } = useContext(CartContext);
 	
   return (
     <nav className="flex justify-between items-center fixed z-10 top-0 w-full py-5 px-8 text-sm font-light bg-white">
@@ -28,6 +31,7 @@ const Navbar = () => {
 					<NavBarItem 
 					key = {text}
 					liClassName={liClassName} 
+					onClick={() => setItemsByCategory(path.replace("/", ""))}
 					path={path} 
 					text={text} 
 					stylesNavLink={stylesNavLink} />
@@ -48,6 +52,10 @@ const Navbar = () => {
 					stylesNavLink={stylesNavLink} />
 				)
 				)}
+				<li className="flex items-center gap-1" >
+					<ShoppingBagIcon className="h-6 w-6 "></ShoppingBagIcon>
+					<div>{count}</div>
+				</li>
 			</ul>
     </nav>
   );
